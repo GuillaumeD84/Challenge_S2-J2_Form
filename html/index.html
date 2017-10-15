@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Formulaire O'clock</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+	<div id="root">
+		<!-- C'était pas indiqué dans le challenge que la flèche devait suivre le défilement vertical de la page alors il ne le fera pas ! -->
+		<div id="arrowAndText">
+			<div id="arrow">
+				<a href="#bottom"><img src="../images/arrow.svg" alt="flèche descendre" id="arrowbottom">
+					<p>Descendre</p></a>
+			</div>
+		</div>
+
+		<header id="header">
+			<!-- si on inclu le lien pour descendre dans le header (penser à uncomment a[href="#bottom"] dans le css)-->
+			<!-- <a href="#bottom">Descendre</a> -->
+			<img src="../images/logo.svg" alt="logo o'clock" id="logo">
+			<h1>Formulaire d'inscription à O'clock</h1>
+			<p>Pour être vraiment étudiant chez O'clock, il faut savoir réaliser son propre formulaire d'inscription en langage <em>&lt;html&gt; !</em></p>
+		</header>
+
+		<!-- 'action' et 'method' seront exploités avec js et php -->
+		<form id="form" action="" method="">
+
+			<div>
+				<p>Je sous-signé(e),
+					<!-- L'attribut 'name' sera utile pour traiter le champ lors de la validation -->
+					<label>
+						<input type="radio" id="genderChoice1" name="gender" value="female" checked="true">
+						Mme
+					</label> /
+					<label>
+						<input type="radio" id="genderChoice2" name="gender" value="male">
+						M
+					</label>
+
+					<!-- L'attribut 'placeholder', contrairement à 'value', permet de donner une indication sur l'information à indiquer dans le champ. Value quant à lui place une valeur par défaut dans ce champ. C'est par exemple utile dans un formulaire pour conserver ce que quelqu'un aurait déjà tapé, mais aurait fait une erreur dans son mot de passe. Il devrait alors retaper son mdp mais on remettrait les 'value' dans les champs qu'il aurait déjà indiqué -->
+					<input type="text" id="lastname" name="lastname" placeholder="&bullet;Nom&bullet;" />
+					<input type="text" id="firstname" name="firstname" placeholder="&bullet;Prénom&bullet;" /> , et je certifie avoir adoré la première semaine de cours commençant le
+
+					<!-- L'input 'date' n'est pas très bien supporté par beaucoup de navigateur. Prévoir un "fallback" = solution de secours -->
+					<!-- <input type="date" name="date" value="date" id="date"> . -->
+
+					<!-- Version liste déroulante -->
+					<label for="day">Jour</label>
+					<select id="day" name="day">
+						<!-- option[value=$]*31 -->
+						<option value="j1">1</option>
+						<option value="j2">2</option>
+						<option value="j3">3</option>
+						<option value="j4">4</option>
+						<option value="j5">5</option>
+						<option value="j6">6</option>
+						<option value="j7">7</option>
+						<option value="j8">8</option>
+						<option value="j9">9</option>
+						<option value="j10">10</option>
+						<option value="j11">11</option>
+						<option value="j12">12</option>
+						<option value="j13">13</option>
+						<option value="j14">14</option>
+						<option value="j15">15</option>
+						<option value="j16">16</option>
+						<option value="j17">17</option>
+						<option value="j18">18</option>
+						<option value="j19">19</option>
+						<option value="j20">20</option>
+						<option value="j21">21</option>
+						<option value="j22">22</option>
+						<option value="j23">23</option>
+						<option value="j24">24</option>
+						<option value="j25">25</option>
+						<option value="j26">26</option>
+						<option value="j27">27</option>
+						<option value="j28">28</option>
+						<option value="j29">29</option>
+						<option value="j30">30</option>
+						<option value="j31">31</option>
+					</select>
+
+					<label for="month">Mois</label>
+					<select id="month" name="month">
+						<option value="m1">Janvier</option>
+						<option value="m2">Février</option>
+						<option value="m3">Mars</option>
+						<option value="m4">Avril</option>
+						<option value="m5">Mai</option>
+						<option value="m6">Juin</option>
+						<option value="m7">Juillet</option>
+						<option value="m8">Août</option>
+						<option value="m9">Septembre</option>
+						<option value="m10">Octobre</option>
+						<option value="m11">Novembre</option>
+						<option value="m12">Décembre</option>
+					</select>
+
+					<label for="year">Année</label>
+					<select id="year" name="year">
+						<option value="y1">2017</option>
+						<option value="y2">2018</option>
+						<option value="y3">2019</option>
+					</select>
+				</p>
+			</div>
+
+			<div>
+				<!-- L'attribut 'for' donne un avantage sémantique au label car il l'associe au champ. Ce n'est plus juste un bout de texte libre. De plus, on peut également cliquer sur le texte pour commencer à écrire dans le champ ce qui lui donne un avantage ergonomique -->
+				<label for="remark">Pour laisser un commentaire libre à propos d'O'clock, c'est par ici :</label>
+				<textarea name="remark" id="remark"></textarea>
+			</div>
+
+			<div>
+				<label>
+					<input type="checkbox" name="certified" value="hascertified" id="certifiedinfo">
+					Je certifie la véracité des ces informations.
+				</label>
+			</div>
+
+			<div>
+				<label>
+					Choisir un mot de passe :
+					<input type="password" name="userPassword" placeholder="Mot de Passe" id="password1">
+				</label>
+
+				<br />
+
+				<label>
+					Confirmer le mot de passe :
+					<input type="password" name="againPassword" placeholder="Confirmer le Mot de Passe" id="password2">
+				</label>
+			</div>
+
+			<div>
+				<!-- Ici on laisse le label à l'extérieur car on ne souhaite pas qu'un clique sur le label est le même effet que cliquer sur le boutton contrairement aux cases à cocher qui sont plus petite -->
+				<label for="upload-file">Ajouter un fichier :</label>
+				<input type="file" id="upload-file">
+			</div>
+
+			<div>
+				<input type="reset" name="reset" value="Réinitialiser">
+				<input type="submit" name="signup" value="GO !">
+			</div>
+		</form>
+
+		<p id="bottom">
+			Pour toute réclamation, <a href="mailto:oclock@oclock.oclock">c'est par ici</a>.
+		</p>
+
+	</div>
+</body>
+
+</html>

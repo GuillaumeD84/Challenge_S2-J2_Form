@@ -1,0 +1,107 @@
+body {
+  background: #0ac3a7;
+  color: #fffdd8;
+  font-family: Helvetica;
+  position: relative;
+  height: 1000px;
+}
+
+#root {
+  padding: 30px;
+  margin: auto;
+}
+
+/*Si la flèche descendre se situe dans le header et non pas dans une autre div*/
+/*a[href="#bottom"] {
+  text-transform: uppercase;
+  padding-top: 60px;
+  background-image: url(../images/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}*/
+
+#arrowAndText {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#arrow {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#arrow p {
+  margin-top: 10px;
+}
+
+a[href="#bottom"] {
+  text-decoration: none;
+  color: #fffdd8;
+}
+
+header {
+  text-align: center;
+  width: 650px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+#logo {
+  width: 600px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+header em {
+  font-style: italic;
+}
+
+#form {
+  width: 700px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: auto;
+  color: #555;
+  background-color: #EEE;
+  padding: 30px 20px 20px 20px;
+}
+
+#form div {
+  margin: 0;
+  padding: 10px;
+}
+
+#form label, #form p {
+  line-height: 1.8em;
+}
+
+textarea {
+  display: block;
+  resize: none;
+  width: 200px;
+  height: 80px;
+}
+
+#bottom {
+  position: absolute;
+  top: calc(100% - 20px);
+}
+
+#bottom a {
+  color: #fffdd8;
+  text-decoration: underline;
+}
