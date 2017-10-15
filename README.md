@@ -10,3 +10,4 @@ Type : Formulaires HTML | CSS
 
 ## Objectif
 Réaliser l'intégration de la page ci-dessous en HTML / CSS.
+![goal](docs/resultat.png)
