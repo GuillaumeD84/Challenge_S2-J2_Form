@@ -6,6 +6,7 @@ Guillaume DURAND
 Promo : Explorer  
 S2-J2 | 10/10/2017
 
+Formateur : Lucie  
 Type : Formulaires HTML | CSS
 
 ## Objectif
